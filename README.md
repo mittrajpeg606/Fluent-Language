@@ -1,26 +1,39 @@
 Fluent Programming Language
+Fluent is a simple interpreted programming language designed to be easy to read, write, and learn.
+It supports variables, conditionals, loops, functions, lists, strings, and built-in utilities, making it a great project for understanding language design and interpreters.
 
 Documentation
-Syntax
-Syntax rules of Fluent.
+This document describes the syntax, data types, operations, and features of the Fluent programming language.
 
-# single line comments can be made using #
+Syntax Rules
+# Single-line comments start with #
 
-# variables can be declared without using any identifer
-# every statement should end with a semicolon
+# Variables can be declared without any identifier keyword
+# Every statement must end with a semicolon
+
 a = 10;
 b = "Fluent";
 
-
-if 1 == 1 { # conditions don't require parenthesis
-  pass; # any element with curly brakets shouldn't be empty
+# Conditions do not require parentheses
+if 1 == 1 {
+  pass; # Blocks with curly braces cannot be empty
 }
 
+# Boolean values
+c = true; # true = 1, false = 0
+print(c); # Output: 1
 
-c = true; # boolean is treated as 1 for true and 0 for false
-print(c); # 1
+
 Data Types & Keywords
-Fluent supports data types such as boolean, string, number & list.
+Supported Data Types
+
+Fluent supports the following data types:
+
+Boolean
+String
+Number
+List
+
 
 # Boolean
 boolVar = true;
@@ -31,53 +44,50 @@ stringVar = "Fluent";
 # Number
 numVar = 10;
 
-# List
+# List (can hold mixed types)
 list = [1, 2.2, true, "Hello"];
 
-# Keywords
-keywords = ["and", "or", "not", "if", "else", "while", "for", "step", "until", "continue", "break", "func", "return", "pass"]
-String Operations
-Operations that can be performed on data type string.
+Keywords
+["and", "or", "not", "if", "else", "while", "for", "step",
+ "until", "continue", "break", "func", "return", "pass"]
 
-# Concat 2 strings
+String Operations
+# Concatenate strings
 str1 = "Hello, " + "World";
 print(str1); # Hello, World
 
-# Access element at a Index in a string
-num = str1[2];
-print(num); # l
+# Access character by index
+char = str1[2];
+print(char); # l
 
 # Repeat string
 str2 = str1[2] * 5;
 print(str2); # lllll
 
-# Number be added to string
+# Add number to string
 str3 = str2 + 5;
 print(str3); # lllll5
-List Operations
-Operations that can be performed on data type list.
 
-# Add element in a list
+List Operations
+# Add element to list
 list1 = [1, 2.2, true, "Hello"] + 100;
 print(list1); # [1, 2.2, 1, "Hello", 100]
 
-
-# Remove element at a Index in a list
+# Remove element at index
 list2 = list1 - 1;
 print(list2); # [1, 1, "Hello", 100]
 
+# Access element at index
+value = list2[2];
+print(value); # Hello
 
-# Access element at a Index in a list
-num = list2[2];
-print(num); # Hello
-
-
-# Concat 2 lists
+# Concatenate two lists
 list3 = [1, 2] * [100, 200];
 print(list3); # [1, 2, 100, 200]
-Conditionals
-Fluent supports if-else-if ladder construct for conditional branching.
 
+
+Conditionals
+Fluent supports if–else if–else conditional branching.
 a = 5;
 b = 7;
 
@@ -91,60 +101,67 @@ if a == b {
   pass;
 }
 
+# Output:
 # Condition 3 is true
-Functions
-Functions are first-class citizens in Fluent and can be defined using the func keyword.
 
+
+Functions
 func add(num1, num2) {
   print("Add Function");
   return num1 + num2;
 }
 
-c = add(1, 2); # Add Function
+Functions can be assigned to variables:
+c = add(1, 2);
 print("c = " + c); # c = 3
-
 a = add;
-print(a(3, 4)); 
+print(a(3, 4));
 # Add Function
 # 7
 
-
-# Single line return functions can be denoted by arrow notation and don't require return keyword 
+Arrow Functions (Single-Line)
 func oopify(x) => x + "oop";
 print(oopify("Hello")); # Hellooop
-Loops
-Fluent supports both while and for loops for iteration.
 
-# While Loop
+Loops
+While Loop
+
 a = 1;
 while a <= 5 {
   print(a);
   a = a + 1;
 }
-# 1
-# 2
-# 3
-# 4
-# 5
 
-# For Loop
+Output
+1
+2
+3
+4
+5
+
+For Loop
 for i = 0 until 5 {
   print(i);
 }
-# 0
-# 1
-# 2
-# 3
-# 4
 
-# For Loop with step
+Output
+0
+1
+2
+3
+4
+
+For Loop with Step
 for i = 0 until 4 step 2 {
   print(i);
 }
-# 0
-# 2
-Built-Ins
-Fluent provides built-in functions like print, input, and more.
+
+Output
+0
+2
+
+
+Built-In Functions
 
 # Print
 print("Hello, world!");
@@ -155,25 +172,30 @@ str = printReturn("Hello, world!");
 # Input
 userInput = input();
 
-# Is List
+# Type checks
 list = [1, 2];
 isLis = isList(list);
-
-# Is Number
 isNum = isNumber(42);
 
-# Is Function
 f = func () {
   pass;
 }
 isFunc = isFunction(f);
 
-# Is String
 isStr = isString("Fluent");
 
-# Len
+# Length
 length = len(list);
 length = len("Fluent");
 
-# Absolute
+# Absolute value
 num = abs(-123);
+
+Why Fluent?
+Fluent is designed to:
+
+  Be simple and readable
+
+  Demonstrate interpreter and language design concepts
+
+  Help beginners understand how real languages work internally
